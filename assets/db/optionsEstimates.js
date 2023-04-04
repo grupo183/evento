@@ -3,37 +3,37 @@ const listEventsCorp = [
     id: 'ec1',
     name: 'eventsCorp',
     text: 'Agasajos',
-    btn: 'primary'
+    btn: 'dark'
   },
   {
     id: 'ec2',
     name: 'eventsCorp',
     text: 'Coffe Breaks',
-    btn: 'primary'
+    btn: 'dark'
   },
   {
     id: 'ec3',
     name: 'eventsCorp',
     text: 'Desayuno',
-    btn: 'primary'
+    btn: 'dark'
   },
   {
     id: 'ec4',
     name: 'eventsCorp',
     text: 'Fiesta Fin de Año',
-    btn: 'primary'
+    btn: 'dark'
   },
   {
     id: 'ec5',
     name: 'eventsCorp',
     text: 'Lanzamiento de Productos',
-    btn: 'primary'
+    btn: 'dark'
   },
   {
     id: 'ec6',
     name: 'eventsCorp',
     text: 'Workshops',
-    btn: 'primary'
+    btn: 'dark'
   }
 ];
 
@@ -42,37 +42,37 @@ const listEventsSoc = [
     id: 'es1',
     name: 'eventsSoc',
     text: 'Aniversasrios',
-    btn: 'success'
+    btn: 'dark'
   },
   {
     id: 'es2',
     name: 'eventsSoc',
     text: 'Bautismos',
-    btn: 'success'
+    btn: 'dark'
   },
   {
     id: 'es3',
     name: 'eventsSoc',
     text: 'Casamientos',
-    btn: 'success'
+    btn: 'dark'
   },
   {
     id: 'es4',
     name: 'eventsSoc',
     text: 'Cumpleaños',
-    btn: 'success'
+    btn: 'dark'
   },
   {
     id: 'es5',
     name: 'eventsSoc',
     text: 'Fiestas de 15',
-    btn: 'success'
+    btn: 'dark'
   },
   {
     id: 'ec6',
     name: 'eventsSoc',
     text: 'FIestas de Egresados',
-    btn: 'success'
+    btn: 'dark'
   }
 ];
 
@@ -80,37 +80,37 @@ const listCountAsistant = [
   {
     id: 'ca1',
     name: 'countAsistant',
-    text: 'Menos de 50',
+    text: '< 50',
     btn: 'dark'
   },
   {
     id: 'ca2',
     name: 'countAsistant',
-    text: 'Menos de 100',
+    text: '< 100',
     btn: 'dark'
   },
   {
     id: 'ca3',
     name: 'countAsistant',
-    text: 'Menos de 150',
+    text: '< 150',
     btn: 'dark'
   },
   {
     id: 'ca4',
     name: 'countAsistant',
-    text: 'Menos de 200',
+    text: '< 200',
     btn: 'dark'
   },
   {
     id: 'ca5',
     name: 'countAsistant',
-    text: 'Menos de 250',
+    text: '< 250',
     btn: 'dark'
   },
   {
     id: 'ca6',
     name: 'countAsistant',
-    text: 'Menos de 300',
+    text: '< 300',
     btn: 'dark'
   },
 ];

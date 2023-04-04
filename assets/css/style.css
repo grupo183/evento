@@ -180,7 +180,7 @@ h6 {
 --------------------------------------------------------------*/
 
 .estimatesForm {
-  background-color: #c2c2c2;
+  /* background-color: #c2c2c2; */
   margin: 0px auto;
   border-radius: 10px;
   height: 500px;
@@ -210,29 +210,29 @@ h6 {
 
 .tab0 {
   display: block;
-  background-color: #d8bc98;
-  height: 350px;
+  /* background-color: #d8bc98; */
+  /* height: 350px; */
   margin-bottom: 20px;
 }
 
 .tab1 {
   display: none;
   background-color: #e5eaaf;
-  height: 350px;
+  /* height: 350px; */
   margin-bottom: 20px;
 }
 
 .tab2 {
   display: none;
   background-color: #9fc9e0;
-  height: 350px;
+  /* height: 350px; */
   margin-bottom: 20px;
 }
 
 .tab3 {
   display: none;
   background-color: #d6abe1;
-  height: 350px;
+  /* height: 350px; */
   margin-bottom: 20px;
 }
 
