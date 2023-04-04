@@ -21,13 +21,70 @@
   <main class="main-page-resumen" id="main">
     <section id="estimates">
       <div class="container mt-3" data-aos="fade-up">
-        <div class="secion-header mb-4">
+        <div class="section-header mb-4">
           <h2>Presupuesto</h2>
           <p>En pocos pasos puede personalizar tu evento</p>
         </div>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-md-8">
+            <form class="estimatesForm p-1 p-md-4" id="estimateForm">
+              <!-- <div class="all-steps" id="all-steps">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+              </div> -->
+              <div class="tab0" id="tab0">
+                <div class="row">
+                  <div class="col-12">
+                    <p class="text-center mt-3">Seleccione el tipo de Evento</p>
+                  </div>
+                  <div class="col-6 text-center d-grid gap-2">
+                    <input type="radio" class="btn-check" name="typeEvent" id="corp-event" autocomplete="off">
+                    <label class="btn btn-outline-primary btn-sm" for="corp-event">Corporativo</label>
+                  </div>
+                  <div class="col-6 text-center d-grid gap-2">
+                    <input type="radio" class="btn-check" name="typeEvent" id="soc-event" autocomplete="off">
+                    <label class="btn btn-outline-success btn-sm" for="soc-event">Social</label>
+                  </div>
+                  <div class="col-12 mt-3 px-0" id="typeEventCorp">
+                    <section id="containerListEventCorp"></section>
+                  </div>
+                  <div class="col-12 mt-3 px-0" id="typeEventSoc">
+                    <section id="containerListEventSoc"></section>
+                  </div>
+                  <div class="col-12 mt-4 px-0" id="titleCountAsistant">
+                    <p class="text-center">Indique la cantidad de asistentes</p>
+                  </div>
+                  <div class="col-12 px-0" id="countAsistant">
+                    <section id="containerListCountAsistant"></section>
+                  </div>
+                </div>
+              </div>
+              <div class="tab1" id="tab1">
 
+              </div>
+              <div class="tab2" id="tab2">
+
+              </div>
+              <div class="tab3" id="tab3">
+
+              </div>
+              <div class="navigation">
+                <div class="row d-flex text-center">
+                  <div class="col-6">
+                    <button id="prevBtn" type="button" class="btn btn-secondary">Anterior</button>
+                  </div>
+                  <div class="col-6">
+                    <button id="nextBtn" type="button" class="btn btn-success">Siguiente</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -36,6 +93,8 @@
   <script src="assets/js/glightbox.min.js"></script>
   <script src="assets/js/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/db/optionsEstimates.js"></script>
+  <script src="estimates.js"></script>
 </body>
 
 </html>

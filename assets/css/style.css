@@ -128,3 +128,111 @@ h6 {
     margin-top: 6px;
   }
 }
+
+/*--------------------------------------------------------------
+# Estimates Section
+--------------------------------------------------------------*/
+.main-page-resumen {
+  margin-top: 90px;
+}
+
+#estimates {
+  padding: 40px 0;
+}
+
+#estimates p {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  color: #060c22;
+  font-style: italic;
+  font-size: 15px;
+}
+
+#estimates .estimates-wrap {
+  border-top: 1px solid #e0e5fa;
+  border-left: 1px solid #e0e5fa;
+  margin-bottom: 30px;
+}
+
+#estimates .estimate-logo {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #e0e5fa;
+  border-bottom: 1px solid #e0e5fa;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+  height: 160px;
+}
+
+#estimates .estimate-logo:hover img {
+  transform: scale(1.2);
+}
+
+#estimates img {
+  transition: all 0.4s ease-in-out;
+}
+
+
+/*--------------------------------------------------------------
+# Estimates Page
+--------------------------------------------------------------*/
+
+.estimatesForm {
+  background-color: #c2c2c2;
+  margin: 0px auto;
+  border-radius: 10px;
+  height: 500px;
+}
+
+.all-steps {
+  text-align: center;
+}
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5
+}
+
+.step .active {
+  opacity: 1
+}
+
+.step.finish {
+  background-color: #4CAF50
+}
+
+.tab0 {
+  display: block;
+  background-color: #d8bc98;
+  height: 350px;
+  margin-bottom: 20px;
+}
+
+.tab1 {
+  display: none;
+  background-color: #e5eaaf;
+  height: 350px;
+  margin-bottom: 20px;
+}
+
+.tab2 {
+  display: none;
+  background-color: #9fc9e0;
+  height: 350px;
+  margin-bottom: 20px;
+}
+
+.tab3 {
+  display: none;
+  background-color: #d6abe1;
+  height: 350px;
+  margin-bottom: 20px;
+}
+
