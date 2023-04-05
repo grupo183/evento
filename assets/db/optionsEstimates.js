@@ -124,13 +124,13 @@ const listExtras = [
       {
         id: 'ex1op1',
         text: 'SI',
-        btn: 'success',
+        btn: 'dark',
         state: ''
       },
       {
         id: 'ex1op2',
         text: 'NO',
-        btn: 'danger',
+        btn: 'dark',
         state: 'checked'
       }
     ]
@@ -143,13 +143,13 @@ const listExtras = [
       {
         id: 'ex2op1',
         text: 'SI',
-        btn: 'success',
+        btn: 'dark',
         state: ''
       },
       {
         id: 'ex2op2',
         text: 'NO',
-        btn: 'danger',
+        btn: 'dark',
         state: 'checked'
       }
     ]
@@ -162,13 +162,13 @@ const listExtras = [
       {
         id: 'ex3op1',
         text: 'SI',
-        btn: 'success',
+        btn: 'dark',
         state: ''
       },
       {
         id: 'ex3op2',
         text: 'NO',
-        btn: 'danger',
+        btn: 'dark',
         state: 'checked'
       }
     ]
@@ -181,13 +181,13 @@ const listExtras = [
       {
         id: 'ex4op1',
         text: 'SI',
-        btn: 'success',
+        btn: 'dark',
         state: ''
       },
       {
         id: 'ex4op2',
         text: 'NO',
-        btn: 'danger',
+        btn: 'dark',
         state: 'checked'
       }
     ]
@@ -200,13 +200,13 @@ const listExtras = [
       {
         id: 'ex5op1',
         text: 'SI',
-        btn: 'success',
+        btn: 'dark',
         state: ''
       },
       {
         id: 'ex5op2',
         text: 'NO',
-        btn: 'danger',
+        btn: 'dark',
         state: 'checked'
       }
     ]
@@ -219,13 +219,13 @@ const listExtras = [
       {
         id: 'ex6op1',
         text: 'SI',
-        btn: 'success',
+        btn: 'dark',
         state: ''
       },
       {
         id: 'ex6op2',
         text: 'NO',
-        btn: 'danger',
+        btn: 'dark',
         state: 'checked'
       }
     ]
@@ -238,13 +238,13 @@ const listExtras = [
       {
         id: 'ex7op1',
         text: 'SI',
-        btn: 'success',
+        btn: 'dark',
         state: ''
       },
       {
         id: 'ex7op2',
         text: 'NO',
-        btn: 'danger',
+        btn: 'dark',
         state: 'checked'
       }
     ]
@@ -257,13 +257,13 @@ const listExtras = [
       {
         id: 'ex8op1',
         text: 'SI',
-        btn: 'success',
+        btn: 'dark',
         state: ''
       },
       {
         id: 'ex8op2',
         text: 'NO',
-        btn: 'danger',
+        btn: 'dark',
         state: 'checked'
       }
     ]
@@ -276,13 +276,13 @@ const listExtras = [
       {
         id: 'ex9op1',
         text: 'SI',
-        btn: 'success',
+        btn: 'dark',
         state: ''
       },
       {
         id: 'ex9op2',
         text: 'NO',
-        btn: 'danger',
+        btn: 'dark',
         state: 'checked'
       }
     ]

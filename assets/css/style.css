@@ -217,22 +217,99 @@ h6 {
 
 .tab1 {
   display: none;
-  background-color: #e5eaaf;
+  /* background-color: #e5eaaf; */
   /* height: 350px; */
   margin-bottom: 20px;
 }
 
 .tab2 {
   display: none;
-  background-color: #9fc9e0;
+  /* background-color: #9fc9e0; */
   /* height: 350px; */
   margin-bottom: 20px;
 }
 
 .tab3 {
   display: none;
-  background-color: #d6abe1;
+  /* background-color: #d6abe1; */
   /* height: 350px; */
   margin-bottom: 20px;
 }
 
+.tab4 {
+  display: none;
+  /* background-color: #d6abe1; */
+  /* height: 350px; */
+  margin-bottom: 20px;
+}
+
+.row-resumen {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+  align-items: center !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.col-5-resumen {
+  flex: 0 0 auto;
+  width: 41.66666667%;
+  text-align: right !important;
+}
+
+.col-7-resumen {
+  flex: 0 0 auto;
+  width: 58.33333333%;
+  text-align: left !important;
+}
+
+.m-b-0 {
+  margin-bottom: 0px !important;
+}
+
+.p-x-0 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  html {
+    background: none;
+    padding: 0;
+  }
+
+  body {
+    box-shadow: none;
+    margin: 0;
+  }
+
+  span:empty {
+    display: none;
+  }
+
+  .add,
+  .cut {
+    display: none;
+  }
+}
+
+@page {
+  margin: 0;
+}
+
+#resumen {
+  /* border: solid 3px #000; */
+  margin: 0;
+  /* text-align: justify; */
+}

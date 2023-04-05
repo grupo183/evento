@@ -15,6 +15,7 @@
   <link href="assets/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     var estimates = true;
   </script>
@@ -52,21 +53,29 @@
                     <input type="radio" class="btn-check" name="typeEvent" id="soc-event" autocomplete="off">
                     <label class="btn btn-outline-dark btn-sm" for="soc-event">Social</label>
                   </div>
-                  <div class="col-12 mt-3 px-0" id="typeEventCorp">
-                    <section id="containerListEventCorp"></section>
-                  </div>
-                  <div class="col-12 mt-3 px-0" id="typeEventSoc">
-                    <section id="containerListEventSoc"></section>
-                  </div>
-                  <div class="col-12 mt-4 px-0" id="titleCountAsistant">
-                    <p class="text-center">Indique la cantidad de asistentes</p>
-                  </div>
-                  <div class="col-12 px-0" id="countAsistant">
-                    <section id="containerListCountAsistant"></section>
+                  <div class="mb-3">
+                    <div class="col-12 mt-3 px-0" id="typeEventCorp">
+                      <section id="containerListEventCorp"></section>
+                    </div>
+                    <div class="col-12 mt-3 px-0" id="typeEventSoc">
+                      <section id="containerListEventSoc"></section>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="tab1" id="tab1">
+                <div class="row">
+                  <div class="col-12">
+                    <p class="text-center mt-3">Indique la cantidad de asistentes</p>
+                  </div>
+                  <div class="mb-3">
+                    <div class="col-12 px-0" id="countAsistant">
+                      <section id="containerListCountAsistant"></section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab2" id="tab2">
                 <div class="row">
                   <div class="col-12">
                     <p class="text-center mt-3 px-0">Indicanos como quieres tu Evento</p>
@@ -74,37 +83,37 @@
                   </div>
                 </div>
               </div>
-              <div class="tab2" id="tab2">
+              <div class="tab3" id="tab3">
                 <div class="row">
                   <div class="col-12">
                     <p class="text-center mt-3 px-0">Datos de contacto</p>
-                    <div class="mb-3">
-                      <label class="form-label mb-1" for="firstName">Nombre</label>
+                    <div class="mb-4">
+                      <!-- <label class="form-label mb-1" for="firstName">Nombre</label> -->
                       <input id="firstName" class="form-control text-capitalize" type="text" placeholder="Nombre"
                         name="firstName">
                       <div class="messages">
                       </div>
                     </div>
-                    <div class="mb-3">
-                      <label class="form-label mb-1" for="lastName">Apellido</label>
+                    <div class="mb-4">
+                      <!-- <label class="form-label mb-1" for="lastName">Apellido</label> -->
                       <input id="lastName" class="form-control text-capitalize" type="text" placeholder="Apellido"
                         name="lastName">
                       <div class="messages">
                       </div>
                     </div>
-                    <div class="mb-3">
-                      <label class="form-label mb-1" for="phone">Teléfono</label>
+                    <div class="mb-4">
+                      <!-- <label class="form-label mb-1" for="phone">Teléfono</label> -->
                       <input id="phone" class="form-control" type="number" placeholder="Teléfono" name="phone">
                       <div class="messages"></div>
                     </div>
-                    <div class="mb-3">
-                      <label class="form-label mb-1" for="email">Email</label>
+                    <div class="mb-4">
+                      <!-- <label class="form-label mb-1" for="email">Email</label> -->
                       <input id="email" class="form-control text-lowercase" type="email" placeholder="Email"
                         name="email">
                       <div class="messages"></div>
                     </div>
                     <div class="mb-3">
-                      <label class="form-label mb-1" for="eventDate">Fecha del evento</label>
+                      <!-- <label class="form-label mb-1" for="eventDate">Fecha del evento</label> -->
                       <input id="eventDate" class="form-control" type="date" placeholder="YYYY-MM-DD" name="eventDate">
                       <div class="messages"></div>
                     </div>
@@ -112,10 +121,19 @@
                 </div>
 
               </div>
-              <div class="tab3" id="tab3">
-
+              <div class="tab4" id="tab4">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="resumenEstimates text-center" id="resumen">
+                      <p>Este es el resumén de tú Evento</p>
+                      <div class="row px-0 align-items-center mb-3">
+                        <section id="containerResumen"></section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="navigation">
+              <div id="navigation">
                 <div class="row d-flex text-center">
                   <div class="col-6">
                     <button id="prevBtn" type="button" class="btn btn-secondary">Anterior</button>
