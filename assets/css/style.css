@@ -915,3 +915,80 @@ h6 {
   font-size: 13px;
   color: #ddd;
 }
+
+
+/*----------------------
+# Team Page
+----------------------*/
+
+.bodyTeam {
+  background: #e8cbc0;
+  background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+  background: linear-gradient(to right, #e8cbc0, #636fa4);
+  background: linear-gradient(150deg, #E71964, #9E69C5 50%);
+  min-height: 100vh;
+}
+
+.bodyTeam h2 {
+  font-family: 'Tomorrow', sans-serif;
+  color: #fff;
+}
+
+.bodyTeam p {
+  font-family: 'Varela Round', sans-serif;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 1.5rem;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+
+.footerTeam {
+  background-color: rgba(179, 0, 255, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 35px;
+  bottom: 0;
+  width: 100%;
+  font-size: 15px;
+}
+
+.goEvento {
+  color: #fff;
+  background: #f82249;
+  padding: 7px 22px;
+  margin: 0 0 0 15px;
+  border-radius: 50px;
+  border: 2px solid #f82249;
+  transition: all ease-in-out 0.3s;
+  font-weight: 500;
+  line-height: 1;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.goEvento:hover {
+  background: none;
+  color: #fff;
+}
+
+.goEvento:focus {
+  color: #fff;
+}
