@@ -938,6 +938,11 @@ h6 {
   font-family: 'Varela Round', sans-serif;
 }
 
+.imgTeam {
+  width: 150px!important;
+  height: 150px!important;
+}
+
 .social-link {
   width: 40px;
   height: 40px;
