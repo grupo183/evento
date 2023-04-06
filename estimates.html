@@ -34,24 +34,22 @@
         <div class="row d-flex justify-content-center align-items-center">
           <div class="col-md-8">
             <form class="estimatesForm p-1 p-md-4" id="estimateForm">
-              <!-- <div class="all-steps" id="all-steps">
-                <span class="step"></span>
-                <span class="step"></span>
-                <span class="step"></span>
-                <span class="step"></span>
-              </div> -->
               <div class="tab0" id="tab0">
                 <div class="row">
                   <div class="col-12">
                     <p class="text-center mt-3">Seleccione el tipo de Evento</p>
                   </div>
-                  <div class="col-6 text-center d-grid gap-2">
-                    <input type="radio" class="btn-check" name="typeEvent" id="corp-event" autocomplete="off">
-                    <label class="btn btn-outline-dark btn-sm" for="corp-event">Corporativo</label>
+                  <div class="mb-3">
+                    <div class="col-8 d-grid gap-2 mx-auto">
+                      <input type="radio" class="btn-check" name="typeEvent" id="corp-event" autocomplete="off">
+                      <label class="btn btn-outline-event btn-sm" for="corp-event">Corporativo</label>
+                    </div>
                   </div>
-                  <div class="col-6 text-center d-grid gap-2">
-                    <input type="radio" class="btn-check" name="typeEvent" id="soc-event" autocomplete="off">
-                    <label class="btn btn-outline-dark btn-sm" for="soc-event">Social</label>
+                  <div class="mb-3">
+                    <div class="col-8 d-grid gap-2 mx-auto">
+                      <input type="radio" class="btn-check" name="typeEvent" id="soc-event" autocomplete="off">
+                      <label class="btn btn-outline-event btn-sm" for="soc-event">Social</label>
+                    </div>
                   </div>
                   <div class="mb-3">
                     <div class="col-12 mt-3 px-0" id="typeEventCorp">
@@ -87,35 +85,30 @@
                 <div class="row">
                   <div class="col-12">
                     <p class="text-center mt-3 px-0">Datos de contacto</p>
-                    <div class="mb-4">
-                      <!-- <label class="form-label mb-1" for="firstName">Nombre</label> -->
-                      <input id="firstName" class="form-control text-capitalize" type="text" placeholder="Nombre"
-                        name="firstName">
-                      <div class="messages">
-                      </div>
-                    </div>
-                    <div class="mb-4">
-                      <!-- <label class="form-label mb-1" for="lastName">Apellido</label> -->
-                      <input id="lastName" class="form-control text-capitalize" type="text" placeholder="Apellido"
-                        name="lastName">
-                      <div class="messages">
-                      </div>
-                    </div>
-                    <div class="mb-4">
-                      <!-- <label class="form-label mb-1" for="phone">Teléfono</label> -->
-                      <input id="phone" class="form-control" type="number" placeholder="Teléfono" name="phone">
-                      <div class="messages"></div>
-                    </div>
-                    <div class="mb-4">
-                      <!-- <label class="form-label mb-1" for="email">Email</label> -->
-                      <input id="email" class="form-control text-lowercase" type="email" placeholder="Email"
-                        name="email">
-                      <div class="messages"></div>
+                    <div class="mb-3">
+                      <input id="firstNameEstimate" class="form-control text-capitalize" type="text"
+                        placeholder="Nombre" name="firstNameEstimate">
+                      <div id="firstNameEstimateFeedBack" class="invalid-feedback"></div>
                     </div>
                     <div class="mb-3">
-                      <!-- <label class="form-label mb-1" for="eventDate">Fecha del evento</label> -->
-                      <input id="eventDate" class="form-control" type="date" placeholder="YYYY-MM-DD" name="eventDate">
-                      <div class="messages"></div>
+                      <input id="lastNameEstimate" class="form-control text-capitalize" type="text"
+                        placeholder="Apellido" name="lastNameEstimate">
+                      <div id="lastNameEstimateFeedBack" class="invalid-feedback"></div>
+                    </div>
+                    <div class="mb-3">
+                      <input id="phoneEstimate" class="form-control" type="number" placeholder="Teléfono"
+                        name="phoneEstimate">
+                      <div id="phoneEstimateFeedBack" class="invalid-feedback"></div>
+                    </div>
+                    <div class="mb-3">
+                      <input id="emailEstimate" class="form-control text-lowercase" type="email" placeholder="email"
+                        name="emailEstimate">
+                      <div id="emailEstimateFeedBack" class="invalid-feedback"></div>
+                    </div>
+                    <div class="mb-3">
+                      <input id="eventDateEstimate" class="form-control" type="date" placeholder="YYYY-MM-DD"
+                        name="eventDateEstimate">
+                      <div id="eventDateEstimateFeedBack" class="invalid-feedback"></div>
                     </div>
                   </div>
                 </div>

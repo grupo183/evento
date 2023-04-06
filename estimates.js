@@ -92,17 +92,6 @@ nextBtn.addEventListener('click', (evt) => {
   }
 
   setNavigation();
-
-  // document.getElementById("nextBtn").style.display = "inline";
-  // document.getElementById("prevBtn").style.display = "inline";
-
-  // console.log("🚀 ~ file: estimates.js:296 ~ getValue ~ tabView:", tabView);
-  // if (tabView === 'TE') {
-  //   document.getElementById("prevBtn").style.display = "none";
-  // } else if (tabView === 'RE') {
-  //   document.getElementById("nextBtn").style.display = "none";
-  // }
-
 });
 
 /* Btn Prev */
@@ -136,16 +125,6 @@ prevBtn.addEventListener('click', (evt) => {
   }
 
   setNavigation();
-  // document.getElementById("nextBtn").style.display = "inline";
-  // document.getElementById("prevBtn").style.display = "inline";
-
-  // console.log("🚀 ~ file: estimates.js:296 ~ getValue ~ tabView:", tabView);
-  // if (tabView === 'TE') {
-  //   document.getElementById("prevBtn").style.display = "none";
-  // } else if (tabView === 'RE') {
-  //   document.getElementById("nextBtn").style.display = "none";
-  // }
-
 });
 
 
@@ -264,11 +243,11 @@ let eventExtras = listExtras;
 const containerResumen = document.querySelector('#containerResumen');
 
 function htmlResumen() {
-  const firstName = document.querySelector('#firstName').value;
-  const lastName = document.querySelector('#lastName').value;
-  const phone = document.querySelector('#phone').value;
-  const email = document.querySelector('#email').value;
-  const eventDate = document.querySelector('#eventDate').value;
+  const firstName = document.querySelector('#firstNameEstimate').value;
+  const lastName = document.querySelector('#lastNameEstimate').value;
+  const phone = document.querySelector('#phoneEstimate').value;
+  const email = document.querySelector('#emailEstimate').value;
+  const eventDate = document.querySelector('#eventDateEstimate').value;
   
   resumen.length = 0;
   resumen.push({
@@ -333,11 +312,6 @@ function htmlResumen() {
 }
 
 function htmlTypeEventSelect() {
-  // document.getElementById("titleCountAsistant").style.display = "none";
-  // document.getElementById("countAsistant").style.display = "none";
-  // document.getElementById("nextBtn").style.display = "none";
-  // document.getElementById("prevBtn").style.display = "none";
-
   const a = document.getElementById('containerListCountAsistant');
   const b = document.getElementById('divCountAsistant');
 
@@ -401,26 +375,6 @@ function getValue(type, radio) {
   }
 
   setNavigation();
-  
-  // document.getElementById("nextBtn").style.display = "inline";
-  // document.getElementById("prevBtn").style.display = "inline";
-
-  // console.log("🚀 ~ file: estimates.js:296 ~ getValue ~ tabView:", tabView);
-  // if (tabView === 'TE') {
-  //   document.getElementById("prevBtn").style.display = "none";
-  // } else if (tabView === 'RE') {
-  //   document.getElementById("nextBtn").style.display = "none";
-  // }
-
-  // if (eventCorporative || eventSocial) {
-  //   document.getElementById("titleCountAsistant").style.display = "block";
-  //   document.getElementById("countAsistant").style.display = "block";
-  // }
-  
-  // if (eventAsistant) {
-  //   document.getElementById("nextBtn").style.display = "inline";
-  //   document.getElementById("prevBtn").style.display = "inline";
-  // }
 }
 
 function setNavigation() {
@@ -429,7 +383,6 @@ function setNavigation() {
   document.getElementById("nextBtn").innerHTML = "Siguiente";
   document.getElementById("prevBtn").innerHTML = "Anterior";
 
-  console.log("🚀 ~ file: estimates.js:296 ~ getValue ~ tabView:", tabView);
   switch (tabView) {
     case 'TE':      
       document.getElementById("prevBtn").style.display = "none";
@@ -445,12 +398,6 @@ function setNavigation() {
     default:
       break;
   }
-  if (tabView === 'TE') {
-    
-  } else if (tabView === 'RE') {
-    
-  }
-
 }
 
 function setExtras(extras, option) {
@@ -466,41 +413,79 @@ function setExtras(extras, option) {
 }
 
 function validateForm() {
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab3");
-  console.log("🚀 ~ file: estimates.js:471 ~ validateForm ~ x:", x);
-  y = x[3].getElementsByTagName("input");
+  const fields = [
+    {
+      field: "firstNameEstimate",
+      text: "Nombre"
+    },
+    {
+      field: "lastNameEstimate",
+      text: "Apellido"
+    },
+    {
+      field: "phoneEstimate",
+      text: "Teléfono"
+    },
+    {
+      field: "emailEstimate",
+      text: "email",
+      validate: 'E'
+    },
+    {
+      field: "eventDateEstimate",
+      text: "Fecha del evento",
+      validate: 'D'
+    },
+  ];
 
-  for (i = 0; i < y.length; i++) {
-    y[i].className += " valid";
+  let i, l = fields.length;
+  let result = false;
 
-    if (y[i].value == "") {
-      y[i].className += " invalid";
-      valid = false;
+  for (i = 0; i < l; i++) {
+    if (document.forms.estimateForm[fields[i].field].value === "") {
+      document.forms.estimateForm[fields[i].field].className += " is-invalid";
+      document.getElementById(`${fields[i].field}FeedBack`).innerHTML = `Debe ingresar un valor para ${fields[i].text}`;
+      result = true;
+    } else {
+      document.getElementById(fields[i].field).classList.remove('is-invalid');
+    }
+  }
+  
+  if (document.forms.estimateForm[fields.filter(m => m.validate === 'E')[0].field].value !== '') {
+    if (validateEmail(document.forms.estimateForm[fields.filter(m => m.validate === 'E')[0].field].value)) {
+      document.getElementById(fields.filter(m => m.validate === 'E')[0].field).classList.add('is-invalid');
+      document.getElementById(`${fields.filter(m => m.validate === 'E')[0].field}FeedBack`).innerHTML = `El ${fields.filter(m => m.validate === 'E')[0].text} no es válido`;
+      result = true;
+    } else {
+      document.getElementById(`${fields.filter(m => m.validate === 'E')[0].field}FeedBack`).classList.add('is-valid');
     }
   }
 
-  // if (valid) { 
-  //   document.getElementsByClassName("step")[currentTab].className += " finish"; 
-  // }
+  if (document.forms.estimateForm[fields.filter(m => m.validate === 'D')[0].field].value !== '') {
+    const eventDate = new Date(document.getElementById('eventDateEstimate').value);
+    const toDate = new Date();
+  
+    if (eventDate <= toDate) {
+      document.getElementById(fields.filter(m => m.validate === 'D')[0].field).classList.add('is-invalid');
+      document.getElementById(`${fields.filter(m => m.validate === 'D')[0].field}FeedBack`).innerHTML = `La ${fields.filter(m => m.validate === 'D')[0].text} no puede ser menor a la actual`;
+      result = true;
+    } else {
+      document.getElementById(`${fields.filter(m => m.validate === 'D')[0].field}FeedBack`).classList.add('is-valid'); 
+    }
 
-  return valid;
+  }
+
+  return result;
 }
-
 
 function validateEmail(input) {
   var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-  if (input.value.match(validRegex)) {
-    alert("Valid email address!");
-    document.form1.text1.focus();
-    return true;
-  } else {
-    alert("Invalid email address!");
-    document.form1.text1.focus();
+  if (input.match(validRegex)) {
     return false;
+  } else {
+    return true;
   }
-
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -515,12 +500,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       htmlTypeEventSelect();
     });
 
-    // document.getElementById("titleCountAsistant").style.display = "none";
-    // document.getElementById("countAsistant").style.display = "none";
-    // document.getElementById("nextprevious").style.display = "none";
     document.getElementById("nextBtn").style.display = "none";
     document.getElementById("prevBtn").style.display = "none";
     tabView = 'TE';
-
   }
 });

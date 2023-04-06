@@ -3,37 +3,37 @@ const listEventsCorp = [
     id: 'ec1',
     name: 'eventsCorp',
     text: 'Agasajos',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ec2',
     name: 'eventsCorp',
     text: 'Coffe Breaks',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ec3',
     name: 'eventsCorp',
     text: 'Desayuno',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ec4',
     name: 'eventsCorp',
     text: 'Fiesta Fin de Año',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ec5',
     name: 'eventsCorp',
     text: 'Lanzamiento de Productos',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ec6',
     name: 'eventsCorp',
     text: 'Workshops',
-    btn: 'dark'
+    btn: 'event'
   }
 ];
 
@@ -42,37 +42,37 @@ const listEventsSoc = [
     id: 'es1',
     name: 'eventsSoc',
     text: 'Aniversasrios',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'es2',
     name: 'eventsSoc',
     text: 'Bautismos',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'es3',
     name: 'eventsSoc',
     text: 'Casamientos',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'es4',
     name: 'eventsSoc',
     text: 'Cumpleaños',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'es5',
     name: 'eventsSoc',
     text: 'Fiestas de 15',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ec6',
     name: 'eventsSoc',
     text: 'FIestas de Egresados',
-    btn: 'dark'
+    btn: 'event'
   }
 ];
 
@@ -81,37 +81,37 @@ const listCountAsistant = [
     id: 'ca1',
     name: 'countAsistant',
     text: '< 50',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ca2',
     name: 'countAsistant',
     text: '< 100',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ca3',
     name: 'countAsistant',
     text: '< 150',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ca4',
     name: 'countAsistant',
     text: '< 200',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ca5',
     name: 'countAsistant',
     text: '< 250',
-    btn: 'dark'
+    btn: 'event'
   },
   {
     id: 'ca6',
     name: 'countAsistant',
     text: '< 300',
-    btn: 'dark'
+    btn: 'event'
   },
 ];
 
@@ -124,13 +124,13 @@ const listExtras = [
       {
         id: 'ex1op1',
         text: 'SI',
-        btn: 'dark',
+        btn: 'event',
         state: ''
       },
       {
         id: 'ex1op2',
         text: 'NO',
-        btn: 'dark',
+        btn: 'event',
         state: 'checked'
       }
     ]
@@ -143,13 +143,13 @@ const listExtras = [
       {
         id: 'ex2op1',
         text: 'SI',
-        btn: 'dark',
+        btn: 'event',
         state: ''
       },
       {
         id: 'ex2op2',
         text: 'NO',
-        btn: 'dark',
+        btn: 'event',
         state: 'checked'
       }
     ]
@@ -162,13 +162,13 @@ const listExtras = [
       {
         id: 'ex3op1',
         text: 'SI',
-        btn: 'dark',
+        btn: 'event',
         state: ''
       },
       {
         id: 'ex3op2',
         text: 'NO',
-        btn: 'dark',
+        btn: 'event',
         state: 'checked'
       }
     ]
@@ -181,13 +181,13 @@ const listExtras = [
       {
         id: 'ex4op1',
         text: 'SI',
-        btn: 'dark',
+        btn: 'event',
         state: ''
       },
       {
         id: 'ex4op2',
         text: 'NO',
-        btn: 'dark',
+        btn: 'event',
         state: 'checked'
       }
     ]
@@ -200,13 +200,13 @@ const listExtras = [
       {
         id: 'ex5op1',
         text: 'SI',
-        btn: 'dark',
+        btn: 'event',
         state: ''
       },
       {
         id: 'ex5op2',
         text: 'NO',
-        btn: 'dark',
+        btn: 'event',
         state: 'checked'
       }
     ]
@@ -219,13 +219,13 @@ const listExtras = [
       {
         id: 'ex6op1',
         text: 'SI',
-        btn: 'dark',
+        btn: 'event',
         state: ''
       },
       {
         id: 'ex6op2',
         text: 'NO',
-        btn: 'dark',
+        btn: 'event',
         state: 'checked'
       }
     ]
@@ -238,13 +238,13 @@ const listExtras = [
       {
         id: 'ex7op1',
         text: 'SI',
-        btn: 'dark',
+        btn: 'event',
         state: ''
       },
       {
         id: 'ex7op2',
         text: 'NO',
-        btn: 'dark',
+        btn: 'event',
         state: 'checked'
       }
     ]
@@ -257,13 +257,13 @@ const listExtras = [
       {
         id: 'ex8op1',
         text: 'SI',
-        btn: 'dark',
+        btn: 'event',
         state: ''
       },
       {
         id: 'ex8op2',
         text: 'NO',
-        btn: 'dark',
+        btn: 'event',
         state: 'checked'
       }
     ]
@@ -276,13 +276,13 @@ const listExtras = [
       {
         id: 'ex9op1',
         text: 'SI',
-        btn: 'dark',
+        btn: 'event',
         state: ''
       },
       {
         id: 'ex9op2',
         text: 'NO',
-        btn: 'dark',
+        btn: 'event',
         state: 'checked'
       }
     ]
