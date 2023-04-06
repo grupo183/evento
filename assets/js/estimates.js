@@ -58,7 +58,7 @@ nextBtn.addEventListener('click', (evt) => {
       icon: 'success',
       confirmButtonText: 'Aceptar'
     }).then(() => {
-      location.href = '/estimates.html';        
+      location.href = '/pages/estimates.html';        
     });
     
     return;

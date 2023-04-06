@@ -14,6 +14,9 @@ function htmlTeams(arrayTeams){
           <img src="${team.img}" alt="${team.name}" 
             class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm imgTeam">
           <h5 class="mb-0">${team.name}</h5>
+          <div class="p-3 text-start">
+            <span class="text-justify">${team.descrip}</span>
+          </div>
           <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item">
               <a href="${team.github}" target="_blank" rel="noopener noreferrer" class="social-link">
