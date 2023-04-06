@@ -1,13 +1,13 @@
 const teamsList = [
   {
-    img: 'https://i.ibb.co/sb7JntG/SA.jpg',
+    img: 'https://i.ibb.co/XfQ0h6r/SA.jpg',
     name: 'Silvia Albornoz',
     github: 'https://github.com/silviatuc',
     linkedin: 'https://www.linkedin.com/in/silvia-albornoz-22a6bb264',
     descrip: 'Soy Silvia vivo en Tucuman. Soy Licenciada en Turismo y me apasiona todo lo referido a la programación y diseño UX.'
   },
   {
-    img: 'https://i.ibb.co/c69V94s/XR1.jpg',
+    img: 'https://i.ibb.co/Yk1LgLT/XR.jpg',
     name: 'Maria Ximena Romani',
     github: 'https://github.com/ximeroma',
     linkedin: 'https://www.linkedin.com/in/maria-ximena-romani-bb060257',
@@ -18,7 +18,7 @@ const teamsList = [
     name: 'Gabriel Loyarte',
     github: 'https://github.com/loyartegabriel2',
     linkedin: 'https://www.linkedin.com/mwlite/in/gabriel-loyarte-0802781aa',
-    descrip: ''
+    descrip: 'Soy Gabriel, vivo en La Plata, soy chef y estudiante de diseño y desarrollo web. Busco mejorar mis habilidades para poder dedicarme de lleno a la programación web.'
   },
   {
     img: 'https://i.ibb.co/RjmrgnG/AM.jpg',
@@ -29,6 +29,5 @@ const teamsList = [
   },
 ];
 
-// https://i.ibb.co/c69V94s/XR1.jpg
 
-// https://i.ibb.co/x3SdBMV/XR.jpg
+
