@@ -1,6 +1,11 @@
 :root {
+  --white: #e8e9ed;
+  --gray: #434257;
+  --blue: #18172c;
+  --green: #00d084;
+  --pink: #ff4b77;
   --color-origin: #F82249;
-  --color-primary: #9E69C5;
+  --color-primary: #998C5D;
   --color-secondary: #E71964;
 }
 
@@ -11,6 +16,8 @@
 
  /* #9E69C5 */
  /* #E71964 */
+
+ /* #998C5D */
 
 /*--------------------------------------------------------------
 # General
@@ -52,6 +59,10 @@ h6 {
   margin: 0 0 20px 0;
   padding: 0;
   color: #0e1b4d;
+}
+
+.btn-rounded {
+  border-radius: 15px!important;
 }
 
 /*--------------------------------------------------------------
@@ -620,7 +631,7 @@ h6 {
 }
 
 #estimates {
-  padding: 40px 0;
+  padding: 20px 0 40px 0;
 }
 
 #estimates p {
@@ -669,28 +680,6 @@ h6 {
   /* height: 500px; */
 }
 
-.all-steps {
-  text-align: center;
-}
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5
-}
-
-.step .active {
-  opacity: 1
-}
-
-.step.finish {
-  background-color: #4CAF50
-}
-
 .tab0 {
   display: block;
   /* background-color: #d8bc98; */
@@ -724,6 +713,107 @@ h6 {
   /* background-color: #d6abe1; */
   /* height: 350px; */
   margin-bottom: 20px;
+}
+
+.lbl {
+  cursor: pointer;
+}
+
+[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.switches {
+  list-style: none;
+  list-style-type: none;
+  padding-left: 0px;
+  max-width: 500px;
+  width: 95%;
+  margin: 20px auto 0;
+  border-radius: 5px;
+}
+
+.switches li {
+  position: relative;
+}
+
+.switches li::before {
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--pink);
+}
+
+.switches label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5px;
+}
+
+.switches span:last-child {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+  background: var(--pink);
+  transition: all 0.3s;
+}
+
+.switches span:last-child::before,
+.switches span:last-child::after {
+  content: "";
+  position: absolute;
+}
+
+.switches span:last-child::before {
+  left: 1px;
+  top: 1px;
+  width: 24px;
+  height: 24px;
+  background: var(--white);
+  border-radius: 50%;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.switches span:last-child::after {
+  top: 50%;
+  right: 8px;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/uncheck-switcher.svg); */
+  background: url(../img/uncheck-switcher.svg);
+  background-size: 12px 12px;
+}
+
+.switches [type="checkbox"]:checked+label span:last-child {
+  background: var(--green);
+}
+
+.switches [type="checkbox"]:checked+label span:last-child::before {
+  transform: translateX(24px);
+}
+
+.switches [type="checkbox"]:checked+label span:last-child::after {
+  width: 14px;
+  height: 14px;
+  left: 8px;
+  /* background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/checkmark-switcher.svg); */
+  background-image: url(../img/checkmark-switcher.svg);
+  background-size: 14px 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .switches li::before {
+    display: none;
+  }
 }
 
 .row-resumen {
@@ -775,6 +865,7 @@ h6 {
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #899eb6;
   --bs-gradient: none;
+  border-radius: 15px;
 }
 
 /*--------------------------------------------------------------

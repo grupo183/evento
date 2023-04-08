@@ -136,7 +136,8 @@ function htmlLEC(arrayLEC) {
   let divElement = document.createElement('div');
   divElement.classList.add('d-grid');
   divElement.classList.add('gap-2');
-  divElement.classList.add('col-7');
+  divElement.classList.add('col-8');
+  divElement.classList.add('col-md-7');
   divElement.classList.add('mx-auto');
   divElement.id = 'divListEventCorp';
   arrayLEC.forEach(function(val) {
@@ -161,7 +162,8 @@ function htmlLES(arrayLES) {
   let divElement = document.createElement('div');
   divElement.classList.add('d-grid');
   divElement.classList.add('gap-2');
-  divElement.classList.add('col-7');
+  divElement.classList.add('col-8');
+  divElement.classList.add('col-md-7');
   divElement.classList.add('mx-auto');
   divElement.id = 'divListEventSoc';
   arrayLES.forEach(function(val) {
@@ -203,35 +205,61 @@ function htmlCountAsistant(arrayCountAsist) {
 
 let countAsistants = listCountAsistant;
 
+// const containerExtras = document.querySelector('#containerExtras');
+
+// function htmlEventExtras(arrayEventExtras) {
+//   let fragment = document.createDocumentFragment();
+//   let divElement = document.createElement('div');
+//   divElement.classList.add('row');
+//   divElement.classList.add('align-items-center');
+//   divElement.id = 'divEventExtras';
+//   arrayEventExtras.forEach(function(val) {
+//     divElement.innerHTML += `
+//       <div class="offset-1 offset-md-1 col-5 col-md-6 mb-2">
+//         <span class="pl-5">${val.text}</span>
+//       </div>
+//     `;
+//     let div1 = document.createElement('div');
+//     div1.classList.add('col-6');
+//     div1.classList.add('offset-md-1');
+//     div1.classList.add('col-md-3');
+//     div1.classList.add('d-flex');
+//     div1.classList.add('mb-1');
+//     val.options.forEach(function(opt) {
+//       div1.innerHTML += `
+//         <div class="mx-auto">
+//           <input type="radio" class="btn-check" name="${val.name}" id="${opt.id}" onchange="setExtras('${val.id}','${opt.id}')" autocomplete="off" ${opt.state}>
+//           <label class="btn btn-outline-${opt.btn} btn-sm" for="${opt.id}">${opt.text}</label>
+//         </div>
+//       `;
+//       divElement.append(div1);
+//     });
+//     fragment.append(divElement);
+//   });
+
+//   containerExtras.append(fragment);
+// }
+
+// let eventExtras = listExtras;
+
 const containerExtras = document.querySelector('#containerExtras');
 
 function htmlEventExtras(arrayEventExtras) {
   let fragment = document.createDocumentFragment();
-  let divElement = document.createElement('div');
-  divElement.classList.add('row');
-  divElement.classList.add('align-items-center');
+  let divElement = document.createElement('ul');
+  divElement.classList.add('switches');
   divElement.id = 'divEventExtras';
-  arrayEventExtras.forEach(function(val) {
-    divElement.innerHTML += `
-      <div class="offset-1 offset-md-1 col-5 col-md-6 mb-2">
-        <span class="pl-5">${val.text}</span>
-      </div>
+  arrayEventExtras.forEach(function(opt) {
+    divElement.innerHTML += 
+    `
+      <li>
+        <input type="checkbox" class="chk" name="${opt.name}" id="${opt.id}" onchange="setExtras('${opt.id}',event)" ${opt.state}>
+        <label class="lbl" for="${opt.id}">
+          <span>${opt.text}</span>
+          <span></span>
+        </label>
+      </li>
     `;
-    let div1 = document.createElement('div');
-    div1.classList.add('col-6');
-    div1.classList.add('offset-md-1');
-    div1.classList.add('col-md-3');
-    div1.classList.add('d-flex');
-    div1.classList.add('mb-1');
-    val.options.forEach(function(opt) {
-      div1.innerHTML += `
-        <div class="mx-auto">
-          <input type="radio" class="btn-check" name="${val.name}" id="${opt.id}" onchange="setExtras('${val.id}','${opt.id}')" autocomplete="off" ${opt.state}>
-          <label class="btn btn-outline-${opt.btn} btn-sm" for="${opt.id}">${opt.text}</label>
-        </div>
-      `;
-      divElement.append(div1);
-    });
     fragment.append(divElement);
   });
 
@@ -239,6 +267,7 @@ function htmlEventExtras(arrayEventExtras) {
 }
 
 let eventExtras = listExtras;
+
 
 const containerResumen = document.querySelector('#containerResumen');
 
@@ -274,6 +303,7 @@ function htmlResumen() {
     type: 'Evento',
     value: (typeEvent === 'C' ? eventCorporative.text : eventSocial.text)
   });
+
   if (eventAsistant) {
     resumen.push({
       type: 'Asistentes',
@@ -281,16 +311,32 @@ function htmlResumen() {
     });
   }
 
+  // for (const optExtras of eventExtras) {
+  //   for (const opt of optExtras.options) {
+  //     if (opt.state === 'checked' && opt.text === 'SI') {
+  //       resumen.push({
+  //         type: optExtras.text,
+  //         value: opt.text
+  //       });   
+  //     }
+  //   }
+  // }
+
   for (const optExtras of eventExtras) {
-    for (const opt of optExtras.options) {
-      if (opt.state === 'checked' && opt.text === 'SI') {
-        resumen.push({
-          type: optExtras.text,
-          value: opt.text
-        });   
-      }
+    if (optExtras.state === 'checked') {
+      resumen.push({
+        type: optExtras.text,
+        value: 'SI'
+      });
     }
   }
+
+  const a = document.getElementById('containerResumen');
+  const b = document.getElementById('divResumen');
+
+  try {
+    a.removeChild(b);
+  } catch (error) {}
 
   let fragment = document.createDocumentFragment();
   let divElement = document.createElement('div');
@@ -400,16 +446,22 @@ function setNavigation() {
   }
 }
 
-function setExtras(extras, option) {
-  const temp = eventExtras.filter(m => m.id === extras)[0];
-
-  for (const o of temp.options) {
-    if (o.id === option) {
-      o.state = 'checked';
-    } else {
-      o.state = '';
-    }
+function setExtras(optID, evt) {
+  const temp = eventExtras.filter(m => m.id === optID)[0];
+  
+  if (evt.target.checked) {
+    temp.state = 'checked';
+  } else {
+    temp.state = '';
   }
+
+  // for (const o of temp.options) {
+  //   if (o.id === option) {
+  //     o.state = 'checked';
+  //   } else {
+  //     o.state = '';
+  //   }
+  // }
 }
 
 function validateForm() {

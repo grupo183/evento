@@ -120,6 +120,63 @@ const listExtras = [
     id: 'ex1',
     name: 'eventExtras1',
     text: 'Hospedaje',
+    state: ''
+  },
+  {
+    id: 'ex2',
+    name: 'eventExtras2',
+    text: 'Catering',
+    state: ''
+  },
+  {
+    id: 'ex3',
+    name: 'eventExtras3',
+    text: 'Ambientación',
+    state: ''
+  },
+  {
+    id: 'ex4',
+    name: 'eventExtras4',
+    text: 'Discjockey',
+    state: ''
+  },
+  {
+    id: 'ex5',
+    name: 'eventExtras5',
+    text: 'Fotografia',
+    state: ''
+  },
+  {
+    id: 'ex6',
+    name: 'eventExtras6',
+    text: 'Filmación',
+    state: ''
+  },
+  {
+    id: 'ex7',
+    name: 'eventExtras7',
+    text: 'Tarjeteria',
+    state: ''
+  },
+  {
+    id: 'ex8',
+    name: 'eventExtras8',
+    text: 'Cotillón',
+    state: ''
+  },
+  {
+    id: 'ex9',
+    name: 'eventExtras9',
+    text: 'Temáticos',
+    state: ''
+  },
+];
+
+const listExtras1 = [
+  {
+    id: 'ex1',
+    name: 'eventExtras1',
+    text: 'Hospedaje',
     options: [
       {
         id: 'ex1op1',
