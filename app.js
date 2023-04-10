@@ -14,7 +14,7 @@ function html(section, dataList, typeElement) {
               <img src="${data.path}" alt="staff 1" class="img-fluid">
               <div class="details">
                 <h3>
-                  <a href="staff-details.html">${data.name}</a>
+                  <a href="javascript:void(0)">${data.name}</a>
                 </h3>
                 <p>${data.rol}</p>
                 <div class="social">
@@ -120,7 +120,7 @@ if (!estimates) {
 
 function viewMsgContact() {
   Swal.fire({
-      title: 'Enviando mensaje...',
+      title: 'Contacto',
       text: `
         Hola ${document.querySelector('#nameMessage').value}, hemos recibido tu mensaje referido a: ${document.querySelector('#subjectMessage').value}. Te estaremos respondiendo a la brevedad posible en tu correo electronico ${document.querySelector('#emailMessage').value}
         `,
@@ -142,7 +142,16 @@ sendMessage.addEventListener('click', (evt) => {
       document.querySelector('#emailMessage').value !== '' &&
       document.querySelector('#subjectMessage').value !== '' &&
       document.querySelector('#messageMessage').value !== '') {
-    viewMsgContact();
+    if (!validateEmail(document.querySelector('#emailMessage').value)) {
+      viewMsgContact();
+    } else {
+      Swal.fire({
+        title: 'Contacto',
+        text: 'Formato de email incorrecto',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    }
   }
 });
 
@@ -152,16 +161,34 @@ subscribeNews.addEventListener('click', (evt) => {
   evt.preventDefault();
 
   if (document.querySelector('#emailNewsletter').value !== '') {
-    Swal.fire({
+    if (!validateEmail(document.querySelector('#emailNewsletter').value)) {
+      Swal.fire({
+          title: 'Newsletter',
+          text: `
+            Gracias por subscribirte a nuestro newsletter en breve te estaran llegando nuesras novedades a ${document.querySelector('#emailNewsletter').value}
+            `,
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        }).then(() => {
+          document.querySelector('#emailNewsletter').value = '';
+        });
+    } else {
+      Swal.fire({
         title: 'Newsletter',
-        text: `
-          Gracias por subscribirte a nuestro newsletter en breve te estaran llegando nuesras novedades a ${document.querySelector('#emailNewsletter').value}
-          `,
-        icon: 'success',
+        text: 'Formato de email incorrecto',
+        icon: 'error',
         confirmButtonText: 'Aceptar'
-      }).then(() => {
-        document.querySelector('#emailNewsletter').value = '';
       });
+    }
   }
 });
 
+function validateEmail(input) {
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+  if (input.match(validRegex)) {
+    return false;
+  } else {
+    return true;
+  }
+}

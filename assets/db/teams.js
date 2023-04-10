@@ -25,7 +25,7 @@ const teamsList = [
     name: 'Alejandro Minozzi',
     github: 'https://github.com/AlejoWebDev',
     linkedin: 'https://www.linkedin.com/in/alejandro-minozzi-591931113/',
-    descrip: 'Soy Alejandro y vivo en Buenos Aires. Hace años que me dedico a la programación, particularmente en el ámbito privado como Analista Programador Oracle.'
+    descrip: 'Soy Alejandro y vivo en Buenos Aires, soy creador de soluciones. Hace años que me dedico a la programación, particularmente en el ámbito privado como Analista Programador Oracle.'
   },
 ];
 
