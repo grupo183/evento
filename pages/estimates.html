@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evento</title>
+  <link href="https://i.ibb.co/cb1WKQX/favicon.png" rel="icon" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+    rel="stylesheet">
+  <link href="../assets/css/aos.css" rel="stylesheet">
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/css/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    var estimates = true;
+  </script>
+</head>
+
+<body>
+  <header id="header" class="d-flex align-items-center bg-dark">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+      <div id="logo" class="me-auto">
+        <a href="#" class="scrollto">
+          <img src="https://i.ibb.co/DbDxM47/logo-evento.png" alt="" title="">
+        </a>
+      </div>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#evento">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Acerca</a></li>
+          <li><a class="nav-link scrollto" href="#staffs">Staff</a></li>
+          <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
+          <li><a class="nav-link scrollto" href="#hotels">Hoteles</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Galeria</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+  <main class="main-page-resumen" id="main">
+    <section id="estimates">
+      <div class="container mt-3" data-aos="fade-up">
+        <div class="section-header mb-1">
+          <h2>Presupuesto</h2>
+          <p>En pocos pasos puede personalizar tu evento</p>
+        </div>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-md-8">
+            <form class="estimatesForm p-1 p-md-2" id="estimateForm">
+              <div class="tab0" id="tab0">
+                <div class="row">
+                  <div class="col-12">
+                    <p class="text-center mt-3">Seleccione el tipo de Evento</p>
+                  </div>
+                  <div class="mb-3">
+                    <div class="col-8 d-grid gap-2 mx-auto">
+                      <input type="radio" class="btn-check" name="typeEvent" id="corp-event" autocomplete="off">
+                      <label class="btn btn-outline-event btn-sm" for="corp-event">Corporativo</label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="col-8 d-grid gap-2 mx-auto">
+                      <input type="radio" class="btn-check" name="typeEvent" id="soc-event" autocomplete="off">
+                      <label class="btn btn-outline-event btn-sm" for="soc-event">Social</label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="col-12 mt-3 px-0" id="typeEventCorp">
+                      <section id="containerListEventCorp"></section>
+                    </div>
+                    <div class="col-12 mt-3 px-0" id="typeEventSoc">
+                      <section id="containerListEventSoc"></section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab1" id="tab1">
+                <div class="row">
+                  <div class="col-12">
+                    <p class="text-center mt-3">Indique la cantidad de asistentes</p>
+                  </div>
+                  <div class="mb-3">
+                    <div class="col-12 px-0" id="countAsistant">
+                      <section id="containerListCountAsistant"></section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab2" id="tab2">
+                <div class="row">
+                  <div class="col-12">
+                    <p class="text-center mt-3 px-0">Indicanos como quieres tu Evento</p>
+                    <section id="containerExtras"></section>
+                  </div>
+                </div>
+              </div>
+              <div class="tab3" id="tab3">
+                <div class="row">
+                  <div class="col-12">
+                    <p class="text-center mt-3 px-0">Datos de contacto</p>
+                    <div class="mb-3">
+                      <input id="firstNameEstimate" class="form-control text-capitalize" type="text"
+                        placeholder="Nombre" name="firstNameEstimate">
+                      <div id="firstNameEstimateFeedBack" class="invalid-feedback"></div>
+                    </div>
+                    <div class="mb-3">
+                      <input id="lastNameEstimate" class="form-control text-capitalize" type="text"
+                        placeholder="Apellido" name="lastNameEstimate">
+                      <div id="lastNameEstimateFeedBack" class="invalid-feedback"></div>
+                    </div>
+                    <div class="mb-3">
+                      <input id="phoneEstimate" class="form-control" type="number" placeholder="Teléfono"
+                        name="phoneEstimate">
+                      <div id="phoneEstimateFeedBack" class="invalid-feedback"></div>
+                    </div>
+                    <div class="mb-3">
+                      <input id="emailEstimate" class="form-control text-lowercase" type="email" placeholder="email"
+                        name="emailEstimate">
+                      <div id="emailEstimateFeedBack" class="invalid-feedback"></div>
+                    </div>
+                    <div class="mb-3">
+                      <input id="eventDateEstimate" class="form-control" type="date" placeholder="YYYY-MM-DD"
+                        name="eventDateEstimate">
+                      <div id="eventDateEstimateFeedBack" class="invalid-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="tab4" id="tab4">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="resumenEstimates text-center" id="resumen">
+                      <p>Este es el resumén de tú Evento</p>
+                      <div class="row px-0 align-items-center mb-3">
+                        <section id="containerResumen"></section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="navigation">
+                <div class="row d-flex text-center">
+                  <div class="col-6">
+                    <button id="prevBtn" type="button" class="btn btn-secondary btn-rounded btn-sm px-4">
+                      Anterior
+                    </button>
+                  </div>
+                  <div class="col-6">
+                    <button id="nextBtn" type="button" class="btn btn-success btn-rounded btn-sm px-4">
+                      Siguiente
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-info">
+            <img src="https://i.ibb.co/DbDxM47/logo-evento.png" alt="" title="">
+          </div>
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about">Acerca</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#staffs">Staff</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#services">Servcios</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#hotels">Hoteles</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#gallery">Galeria</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Contáctanos</h4>
+            <p> <a href="https://goo.gl/maps/HjWnZCzXpAa4G6Xf9" target="_blank" rel="noopener noreferrer">
+                MADERO CENTER
+              </a> <br> Buenos Aires <br> Argentina <br> <strong>Télefono:</strong> <a href="tel:+541178000000">+54 11
+                7800 0000</a><br> <strong>Email:</strong>
+              <a href="#">
+                contacto@evento.com
+              </a><br>
+            </p>
+            <div class="social-links"> <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> <a href="#"
+                class="facebook"><i class="bi bi-facebook"></i></a> <a href="#" class="instagram"><i
+                  class="bi bi-instagram"></i></a> <a href="#" class="google-plus"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright"> &copy; Copyright. Todos los derechos reservados <a href="/pages/team.html">Grupo C</a>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <script src="../assets/js/aos.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/glightbox.min.js"></script>
+  <script src="../assets/js/swiper-bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/db/optionsEstimates.js"></script>
+  <script src="../assets/js/estimates.js"></script>
+</body>
+
+</html>
