@@ -109,9 +109,6 @@ function html(section, dataList, typeElement) {
   }
 
   container.append(fragment);            
-  getDataAPI(`assets/db/${String(section).toLocaleLowerCase()}.json`)
-    .then((dataList) => {
-    });
 }
 
 if (!estimates) {
