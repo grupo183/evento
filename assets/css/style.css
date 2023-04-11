@@ -3,17 +3,13 @@
 --------------------------------------------------------------*/
 :root {
   --white: #fff;
+  --black: #000;
   --gray: #434257;
   --blue: #18172c;
   --green: #00d084;
   --pink: #ff4b77;
-  --color-origin: #f82249;
-  --color-primary: #f82249;
-  --color-secondary: #E71964;
+  --color-primary: #a19055;
 }
-
-/* #e8e9ed; */
-/* #998C5D; */
 
 html {
   scroll-behavior: smooth;
@@ -34,7 +30,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #f8234a;
+  color: #f5deb3;
   outline: none;
   text-decoration: none;
 }
@@ -85,8 +81,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #f94a6a;
-  color: var(--white);
+  background: #808000;
 }
 
 .back-to-top.active {
@@ -983,7 +978,7 @@ h6 {
   font-weight: 400;
   padding-left: 25px;
   cursor: pointer;
-  color: #e0072f;
+  color: #6673a2;
   transition: 0.3s;
 }
 
@@ -1026,7 +1021,6 @@ h6 {
 --------------------------------------------------------------*/
 #subscribe {
   padding: 60px;
-  /* background: url(../img/subscribe-bg.jpg) center center no-repeat; */
   background: url(https://i.ibb.co/vX4H807/subscribe-bg.jpg) center center no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -1092,7 +1086,7 @@ h6 {
 }
 
 #subscribe button:hover {
-  background: #e0072f;
+  background: #808000;
 }
 
 @media (max-width: 460px) {
@@ -1175,7 +1169,7 @@ h6 {
 #contact .email-form .error-message {
   display: none;
   color: var(--white);
-  background: #ed3c0d;
+  background: #808000;
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -1245,7 +1239,7 @@ h6 {
 }
 
 #contact .email-form button[type=submit]:hover {
-  background: #e0072f;
+  background: #808000;  
 }
 
 @-webkit-keyframes animate-loading {
@@ -1313,50 +1307,36 @@ h6 {
   transition: all 0.4s ease-in-out;
 }
 
-
 /*--------------------------------------------------------------
 # Estimates Page
 --------------------------------------------------------------*/
-
 .estimatesForm {
-  /* background-color: #c2c2c2; */
   margin: 0px auto;
   border-radius: 10px;
-  /* height: 500px; */
 }
 
 .tab0 {
   display: block;
-  /* background-color: #d8bc98; */
-  /* height: 350px; */
   margin-bottom: 20px;
 }
 
 .tab1 {
   display: none;
-  /* background-color: #e5eaaf; */
-  /* height: 350px; */
   margin-bottom: 20px;
 }
 
 .tab2 {
   display: none;
-  /* background-color: #9fc9e0; */
-  /* height: 350px; */
   margin-bottom: 20px;
 }
 
 .tab3 {
   display: none;
-  /* background-color: #d6abe1; */
-  /* height: 350px; */
   margin-bottom: 20px;
 }
 
 .tab4 {
   display: none;
-  /* background-color: #d6abe1; */
-  /* height: 350px; */
   margin-bottom: 20px;
 }
 
@@ -1719,7 +1699,6 @@ h6 {
 }
 
 .footerTeam {
-  /* background-color: rgba(179, 0, 255, 0.06); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1751,4 +1730,33 @@ h6 {
 
 .goEvento:focus {
   color: var(--white);
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  html {
+    background: none;
+    padding: 0;
+  }
+
+  body {
+    box-shadow: none;
+    margin: 0;
+  }
+
+  span:empty {
+    display: none;
+  }
+
+  .add,
+  .cut {
+    display: none;
+  }
+}
+
+@page {
+  margin: 0;
 }

@@ -52,6 +52,7 @@ nextBtn.addEventListener('click', (evt) => {
   const tabActive = tabs.filter(m => m.visible === true)[0];
 
   if (tabActive.id === tabs.length - 1) {
+    createPdf();
     Swal.fire({
       title: 'Evento',
       text: 'Gracias por utilizar el presupuesto en linea. Pronto nos pondremos en contacto',
@@ -65,13 +66,28 @@ nextBtn.addEventListener('click', (evt) => {
   }
 
   if (tabView === 'CO') {
-    if (validateForm()) return;
+    if (validateForm()) {
+      document.querySelector(`#step${tabActive.id}`).classList.remove('step-success');
+      document.querySelector(`#step${tabActive.id}`).classList.remove('step-active');
+      document.querySelector(`#step${tabActive.id}`).classList.add('step-error');
+      return;
+    } else {
+      document.querySelector(`#step${tabActive.id}`).classList.remove('step-error');
+      document.querySelector('#steps').style.display = 'none';
+    }
   }
 
   if (tabActive) {
     for (const tab of tabs) {
+
       if (tab.id === tabActive.id + 1) {
         tab.visible = true;
+        document.querySelector(`#step${tabActive.id}`).classList.add('step-success');
+
+        if (tabActive.id + 1 < tabs.length - 1) {
+          document.querySelector(`#step${tabActive.id+1}`).classList.add('step-active');
+        }
+
         document.getElementById(tab.key).style.display = 'block';
         tabView = tab.type;
 
@@ -82,6 +98,7 @@ nextBtn.addEventListener('click', (evt) => {
           try {
             a.removeChild(b);
           } catch (error) {}
+
           htmlEventExtras(eventExtras);
         }
       } else {
@@ -97,7 +114,43 @@ nextBtn.addEventListener('click', (evt) => {
 /* Btn Prev */
 prevBtn.addEventListener('click', (evt) => {
   evt.preventDefault();
+
+  if (tabView === 'TE') {
+    const a = document.getElementById('containerListEventCorp');
+    const b = document.getElementById('divListEventCorp');
+
+    try {
+      a.removeChild(b);
+    } catch (error) {}
+
+    const c = document.getElementById('containerListEventSoc');
+    const d = document.getElementById('divListEventSoc');
+
+    try {
+      c.removeChild(d);
+    } catch (error) {}
+
+    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("prevBtn").style.display = "none";
+    tabView = 'TE';
+    document.querySelector(`#step0`).classList.add('step-active');
+    corp.checked = '';
+    soc.checked = '';
+
+    return;
+  }
+
   const tabActive = tabs.filter(m => m.visible === true)[0];
+
+  if (tabView === 'RE') {
+    document.querySelector('#steps').style.display = 'block';
+  }
+
+  if (tabActive.id < tabs.length - 1) {
+    document.querySelector(`#step${tabActive.id}`).classList.remove('step-success');
+    document.querySelector(`#step${tabActive.id}`).classList.remove('step-error');
+    document.querySelector(`#step${tabActive.id}`).classList.remove('step-active');
+  }
 
   if (tabActive.id === 0) return;
 
@@ -105,6 +158,8 @@ prevBtn.addEventListener('click', (evt) => {
     for (const tab of tabs) {
       if (tab.id === tabActive.id - 1) {
         tab.visible = true;
+        document.querySelector(`#step${tab.id}`).classList.remove('step-success');
+        document.querySelector(`#step${tab.id}`).classList.add('step-active');
         document.getElementById(tab.key).style.display = 'block';
         tabView = tab.type;
 
@@ -382,7 +437,8 @@ function setNavigation() {
 
   switch (tabView) {
     case 'TE':      
-      document.getElementById("prevBtn").style.display = "none";
+      document.getElementById("prevBtn").style.display = "inline";
+      document.getElementById("prevBtn").innerHTML = "Cancelar";
       break;
     case 'RE':
       document.getElementById("nextBtn").innerHTML = "Solicitar";
@@ -498,5 +554,73 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById("nextBtn").style.display = "none";
     document.getElementById("prevBtn").style.display = "none";
     tabView = 'TE';
+    document.querySelector(`#step0`).classList.add('step-active');
   }
 });
+
+
+function createPdf() {
+  let element = 
+  `
+  <div>
+      <h3 style="text-align: center;">PRESUPUESTO</h1>
+      <p>Gracias por utilizar nuestros servicios. Nuestros asesores se comunicaran para finalizar esta solicitud</p>
+      <table>
+        <thead>
+        <tr>
+            <th style="width: 250px;">Contacto</th>
+            <th style="width: 250px;">Email</th>
+            <th style="width: 100px;">Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td scope="row" >${resumen[0].value}</td>
+            <td>${resumen[1].value}</td>
+            <td>${resumen[2].value}</td>
+            </tr>
+        </tbody>
+      </table>
+      <table>
+        <tr>
+          <th style="width:100px">Tipo</th>
+          <th style="width:300px">Evento</th>
+          <th style="width:100px">Fecha</th>
+          <th style="width:100px">Asistentes</th>
+        </tr>
+        <tr>
+          <td style="text-align:center" >${resumen[4].value}</td>
+          <td style="text-align:center" >${resumen[5].value}</td>
+          <td style="text-align:center" >${resumen[3].value}</td>
+          <td style="text-align:center" >${resumen[6].value}</td>
+        </tr>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 250px;">Adicionales</th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+  for (let i = 7; i < resumen.length; i++) {
+    element += `<tr>
+            <td scope="row" >${resumen[i].type}</td>
+          </tr>`;
+  }
+          
+  element += `</tbody>
+      </table>
+
+      <div style="display: flex; align-items: center;">
+      <h2 style="text-align: center;"> Estas en EVENTO</h2>
+      <span style="text-align: center; padding-top: 6px; padding-left: 5px">donde tú evento es nuestra pasión...</span>
+      </div>
+      
+    </div>
+  `;
+
+  var val = htmlToPdfmake(element);
+  var dd = { content: val };
+  pdfMake.createPdf(dd).download();
+}

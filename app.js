@@ -111,13 +111,6 @@ function html(section, dataList, typeElement) {
   container.append(fragment);            
 }
 
-if (!estimates) {
-  html('Staffs', staffsList, 'div');
-  html('Services', servicesList, 'div');
-  html('Hotels', hotelsList, 'div');
-  html('FAQs', faqLists, 'ul');
-}
-
 function viewMsgContact() {
   Swal.fire({
       title: 'Contacto',
@@ -134,54 +127,8 @@ function viewMsgContact() {
     });
 }
 
-const sendMessage = document.querySelector('#sendMessage');
 
-sendMessage.addEventListener('click', (evt) => {
-  evt.preventDefault();
-  if (document.querySelector('#nameMessage').value !== '' &&
-      document.querySelector('#emailMessage').value !== '' &&
-      document.querySelector('#subjectMessage').value !== '' &&
-      document.querySelector('#messageMessage').value !== '') {
-    if (!validateEmail(document.querySelector('#emailMessage').value)) {
-      viewMsgContact();
-    } else {
-      Swal.fire({
-        title: 'Contacto',
-        text: 'Formato de email incorrecto',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    }
-  }
-});
 
-const subscribeNews = document.querySelector('#subscribeNews');
-
-subscribeNews.addEventListener('click', (evt) => {
-  evt.preventDefault();
-
-  if (document.querySelector('#emailNewsletter').value !== '') {
-    if (!validateEmail(document.querySelector('#emailNewsletter').value)) {
-      Swal.fire({
-          title: 'Newsletter',
-          text: `
-            Gracias por subscribirte a nuestro newsletter en breve te estaran llegando nuesras novedades a ${document.querySelector('#emailNewsletter').value}
-            `,
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        }).then(() => {
-          document.querySelector('#emailNewsletter').value = '';
-        });
-    } else {
-      Swal.fire({
-        title: 'Newsletter',
-        text: 'Formato de email incorrecto',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    }
-  }
-});
 
 function validateEmail(input) {
   var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -192,3 +139,63 @@ function validateEmail(input) {
     return true;
   }
 }
+
+const subscribeNews = document.querySelector('#subscribeNews');
+const sendMessage = document.querySelector('#sendMessage');
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  if (!estimates) {
+    html('Staffs', staffsList, 'div');
+    html('Services', servicesList, 'div');
+    html('Hotels', hotelsList, 'div');
+    html('FAQs', faqLists, 'ul');
+  }
+
+  subscribeNews.addEventListener('click', (evt) => {
+    evt.preventDefault();
+
+    if (document.querySelector('#emailNewsletter').value !== '') {
+      if (!validateEmail(document.querySelector('#emailNewsletter').value)) {
+        Swal.fire({
+            title: 'Newsletter',
+            text: `
+              Gracias por subscribirte a nuestro newsletter en breve te estaran llegando nuesras novedades a ${document.querySelector('#emailNewsletter').value}
+              `,
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+          }).then(() => {
+            document.querySelector('#emailNewsletter').value = '';
+          });
+      } else {
+        Swal.fire({
+          title: 'Newsletter',
+          text: 'Formato de email incorrecto',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+      }
+    }
+  });
+  
+  sendMessage.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    if (document.querySelector('#nameMessage').value !== '' &&
+        document.querySelector('#emailMessage').value !== '' &&
+        document.querySelector('#subjectMessage').value !== '' &&
+        document.querySelector('#messageMessage').value !== '') {
+      if (!validateEmail(document.querySelector('#emailMessage').value)) {
+        viewMsgContact();
+      } else {
+        Swal.fire({
+          title: 'Contacto',
+          text: 'Formato de email incorrecto',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+      }
+    }
+  });
+
+
+});
+
