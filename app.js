@@ -1,16 +1,32 @@
+let moneys;
+
+/* Call API Rest */
+function getMoney() {
+  const options = {method: 'GET', headers: {accept: 'application/json'}};
+  fetch('https://api.bluelytics.com.ar/v2/latest', options)
+  .then(response => response.json())
+  .then(response => {moneys = response;})
+  .catch(err => console.error(err));
+}
+
+getMoney();
+
 function html(section, dataList, typeElement) {
   const container = document.querySelector(`#container${section}`);
   let fragment = document.createDocumentFragment();
   let element = document.createElement(typeElement);
-
+  let index = 0;
+  
   switch (section) {
     case 'Staffs':
       element.classList.add('row');
+      index = 0;
       dataList.forEach(function(data){
+        index++;
         element.innerHTML +=  
         `         
           <div class="col-lg-4 col-md-6">
-            <div class="staff" data-aos="fade-up" data-aos-delay="100" >
+            <div class="staff" data-aos="fade-up" data-aos-delay="${index*62*2}">
               <img src="${data.path}" alt="staff 1" class="img-fluid">
               <div class="details">
                 <h3>
@@ -41,21 +57,23 @@ function html(section, dataList, typeElement) {
       break;
     case 'Services':
       element.classList.add('servicesList');
-        dataList.forEach(function(data){
-          element.innerHTML += 
-          `
-            <div class="thumbex" data-aos="fade-up">
-              <div class="thumbnail">
-                <a href="javascript:void(0)">
-                  <img src="${data.path}">
-                  <span>${data.name}</span>
-                </a>
-              </div>
+      index = 0;
+      dataList.forEach(function(data){
+        index++;
+        element.innerHTML += 
+        `
+          <div class="thumbex" data-aos="fade-up" data-aos-delay="${index*62*2}">
+            <div class="thumbnail">
+              <a href="javascript:void(0)">
+                <img src="${data.path}">
+                <span>${data.name}</span>
+              </a>
             </div>
-          `;
+          </div>
+        `;
 
-          fragment.append(element);              
-        });
+        fragment.append(element);              
+      });
       break;
     case 'Hotels': 
       element.classList.add('row');
@@ -137,8 +155,10 @@ function validateEmail(input) {
   }
 }
 
+
 const subscribeNews = document.querySelector('#subscribeNews');
 const sendMessage = document.querySelector('#sendMessage');
+const dateMoney = document.querySelector('#dateMoney');
 
 document.addEventListener("DOMContentLoaded", function(event) {
   if (!estimates) {
@@ -147,6 +167,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     html('Hotels', hotelsList, 'div');
     html('FAQs', faqLists, 'ul');
   }
+
+  dateMoney.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    getMoney();
+  });
 
   subscribeNews.addEventListener('click', (evt) => {
     evt.preventDefault();
@@ -193,6 +218,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   });
 
+  setTimeout(() => {
+    document.querySelector('#dateMoney').innerHTML = `<i class="bi bi-arrow-clockwise"></i> ${new Date(moneys.last_update).toLocaleDateString('es-es', { weekday:"short", year:"numeric", month:"short", day:"numeric", hour:"2-digit", minute: "2-digit"}).toLocaleUpperCase()}`;
+    document.querySelector('#dco').innerHTML = `$ ${moneys.oficial.value_buy}`;
+    document.querySelector('#dvo').innerHTML = `$ ${moneys.oficial.value_sell}`;
+    document.querySelector('#dcb').innerHTML = `$ ${moneys.blue.value_buy}`;
+    document.querySelector('#dvb').innerHTML = `$ ${moneys.blue.value_sell}`;
+    document.querySelector('#eco').innerHTML = `$ ${moneys.oficial_euro.value_buy}`;
+    document.querySelector('#evo').innerHTML = `$ ${moneys.oficial_euro.value_sell}`;
+    document.querySelector('#ecb').innerHTML = `$ ${moneys.blue_euro.value_buy}`;
+    document.querySelector('#evb').innerHTML = `$ ${moneys.blue_euro.value_sell}`;
+  }, 2000);
 
 
 });
