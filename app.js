@@ -26,7 +26,7 @@ function html(section, dataList, typeElement) {
         element.innerHTML +=  
         `         
           <div class="col-lg-4 col-md-6">
-            <div class="staff" data-aos="fade-up" data-aos-delay="${index*62*2}">
+            <div class="staff" data-aos="fade-up" data-aos-delay="${index*50*3}">
               <img src="${data.path}" alt="staff 1" class="img-fluid">
               <div class="details">
                 <h3>
@@ -62,7 +62,7 @@ function html(section, dataList, typeElement) {
         index++;
         element.innerHTML += 
         `
-          <div class="thumbex" data-aos="fade-up" data-aos-delay="${index*62*2}">
+          <div class="thumbex" data-aos="fade-up" data-aos-delay="${index*50*3}">
             <div class="thumbnail">
               <a href="javascript:void(0)">
                 <img src="${data.path}">

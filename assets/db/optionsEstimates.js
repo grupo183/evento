@@ -41,7 +41,7 @@ const listEventsSoc = [
   {
     id: 'es1',
     name: 'eventsSoc',
-    text: 'Aniversasrios',
+    text: 'Aniversarios',
     btn: 'event'
   },
   {
