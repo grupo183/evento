@@ -159,8 +159,16 @@ function validateEmail(input) {
 const subscribeNews = document.querySelector('#subscribeNews');
 const sendMessage = document.querySelector('#sendMessage');
 const dateMoney = document.querySelector('#dateMoney');
+const music = document.querySelector('#music');
+  
+const audio = document.createElement("audio");
+audio.preload = "auto";
+audio.volume = 0.8;
+audio.src = "./assets/mp3/hf.mp3";
+document.body.appendChild(audio);
 
 document.addEventListener("DOMContentLoaded", function(event) {
+  
   if (!estimates) {
     html('Staffs', staffsList, 'div');
     html('Services', servicesList, 'div');
@@ -229,7 +237,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.querySelector('#ecb').innerHTML = `$ ${moneys.blue_euro.value_buy}`;
     document.querySelector('#evb').innerHTML = `$ ${moneys.blue_euro.value_sell}`;
   }, 2000);
+  
+  setTimeout(() => {
+    document.querySelector('.ring').style.display = 'none';    
+  }, 1000);
 
+  music.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    
+    if (musicPlay === true) {
+      musicPlay = !musicPlay;
+      document.getElementById('music').src = './assets/img/stop.png';
+      audio.pause();
+    } else {
+      musicPlay = !musicPlay;
+      document.getElementById('music').src = './assets/img/play.png';
+      audio.play();
+    }
+  });
 
 });
 

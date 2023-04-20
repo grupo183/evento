@@ -16,12 +16,16 @@
   <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
+    integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
   <script>
     var estimates = false;
+    var musicPlay = false;
   </script>
 </head>
 
 <body>
+  <!-- <audio id="repro" src="./assets/mp3/hf.mp3" autoplay loop></audio> -->
   <header id="header" class="d-flex align-items-center ">
     <div class="container-fluid container-xxl d-flex align-items-center">
       <div id="logo" class="me-auto">
@@ -42,9 +46,15 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <a class="estimates scrollto" href="/pages/estimates.html">Presupuesto</a>
+      <a>
+        <img id="music" src="./assets/img/stop.png" alt="" width="35">
+      </a>
     </div>
   </header>
   <section id="evento">
+    <div class="ring">EVENTO
+      <span id="load"></span>
+    </div>
     <div class="evento-container" data-aos="zoom-in" data-aos-delay="100">
       <h1 class="mb-4 pb-0">Tu <span> E</span>vento...<br>nuestra pasión
       </h1>
